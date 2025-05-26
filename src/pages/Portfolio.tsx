@@ -1,10 +1,12 @@
 
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
     {
+      id: "e-commerce",
       title: "E-commerce Platform",
       description: "Modern online store with advanced filtering and payment integration",
       image: "🛍️",
@@ -12,6 +14,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: "saas-dashboard",
       title: "SaaS Dashboard",
       description: "Analytics dashboard with real-time data visualization",
       image: "📊",
@@ -19,6 +22,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: "mobile-banking",
       title: "Mobile Banking App",
       description: "Secure mobile banking application with biometric authentication",
       image: "🏦",
@@ -26,6 +30,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: "ai-chat",
       title: "AI Chat Platform",
       description: "Intelligent chatbot platform with natural language processing",
       image: "🤖",
@@ -33,6 +38,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: "real-estate",
       title: "Real Estate Portal",
       description: "Property listing platform with virtual tours and maps",
       image: "🏠",
@@ -40,6 +46,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
+      id: "food-delivery",
       title: "Food Delivery App",
       description: "On-demand food delivery with real-time tracking",
       image: "🍔",
@@ -67,37 +74,38 @@ const Portfolio = () => {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card 
-                key={project.title}
-                className="bg-dark-gray/50 border-neon-blue/20 hover:border-neon-green/60 transition-all duration-500 group hover:transform hover:scale-105 backdrop-blur-sm animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader className="text-center">
-                  <div className="text-6xl mb-4 group-hover:animate-float">
-                    {project.image}
-                  </div>
-                  <CardTitle className="text-white font-orbitron text-xl group-hover:text-neon-green transition-colors duration-300">
-                    {project.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-400 text-center mb-4 group-hover:text-gray-300 transition-colors duration-300">
-                    {project.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 justify-center mb-4">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-neon-blue/20 text-neon-blue text-sm rounded-full">
-                        {tech}
+              <Link key={project.title} to={`/project/${project.id}`}>
+                <Card 
+                  className="bg-dark-gray/50 border-neon-blue/20 hover:border-neon-green/60 transition-all duration-500 group hover:transform hover:scale-105 backdrop-blur-sm animate-slide-up cursor-pointer"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader className="text-center">
+                    <div className="text-6xl mb-4 group-hover:animate-float">
+                      {project.image}
+                    </div>
+                    <CardTitle className="text-white font-orbitron text-xl group-hover:text-neon-green transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-400 text-center mb-4 group-hover:text-gray-300 transition-colors duration-300">
+                      {project.description}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-2 justify-center mb-4">
+                      {project.tech.map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-neon-blue/20 text-neon-blue text-sm rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-center">
+                      <span className="text-neon-green group-hover:text-white transition-colors duration-300">
+                        View Project →
                       </span>
-                    ))}
-                  </div>
-                  <div className="text-center">
-                    <button className="text-neon-green hover:text-white transition-colors duration-300">
-                      View Project →
-                    </button>
-                  </div>
-                </CardContent>
-              </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
