@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -72,12 +73,16 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{ animationDelay: "0.6s" }}>
-          <Button className="bg-gradient-to-r from-neon-blue to-neon-green hover:from-neon-green hover:to-neon-pink text-black font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-neon-blue/50">
-            Start Your Project
-          </Button>
-          <Button variant="outline" className="border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-            View Our Work
-          </Button>
+          <Link to="/contact">
+            <Button className="bg-gradient-to-r from-neon-blue to-neon-green hover:from-neon-green hover:to-neon-pink text-black font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-neon-blue/50">
+              Start Your Project
+            </Button>
+          </Link>
+          <Link to="/portfolio">
+            <Button variant="outline" className="border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+              View Our Work
+            </Button>
+          </Link>
         </div>
 
         {/* Scroll Indicator */}

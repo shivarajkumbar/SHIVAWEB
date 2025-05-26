@@ -1,14 +1,12 @@
 
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-deep-black text-white overflow-x-hidden">
       <Navigation />
       <HeroSection />
-      <ServicesSection />
       
       {/* Footer */}
       <footer className="bg-dark-gray py-12 border-t border-neon-blue/20">
