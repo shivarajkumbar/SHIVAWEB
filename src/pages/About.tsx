@@ -5,12 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const About = () => {
   const team = [
     {
-      name: "Shiva Kumar",
-      role: "Founder & CEO",
-      image: "👨‍💻",
-      description: "Full-stack developer with 8+ years of experience in creating digital solutions"
-    },
-    {
       name: "Priya Sharma",
       role: "Lead Designer",
       image: "👩‍🎨",
@@ -48,6 +42,59 @@ const About = () => {
             </p>
           </div>
 
+          {/* Founder Section */}
+          <div className="mb-20">
+            <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12 text-neon-blue">Meet Our Founder</h2>
+            <Card className="bg-dark-gray/50 border-neon-green/40 backdrop-blur-sm max-w-4xl mx-auto hover:border-neon-pink/60 transition-all duration-500">
+              <CardHeader className="text-center">
+                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-neon-blue to-neon-green rounded-full flex items-center justify-center text-6xl animate-glow">
+                  👨‍💻
+                </div>
+                <CardTitle className="text-white font-orbitron text-3xl text-neon-green">
+                  Shivaraja
+                </CardTitle>
+                <CardDescription className="text-neon-blue font-semibold text-lg">
+                  Founder & CEO
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center space-y-6">
+                <div className="bg-deep-black/30 p-6 rounded-lg border border-neon-blue/20">
+                  <h3 className="text-xl font-bold text-neon-pink mb-3">Educational Background</h3>
+                  <p className="text-gray-300">
+                    Currently pursuing BCA (Bachelor of Computer Applications) at 
+                    <span className="text-neon-blue font-semibold"> KLE Society's, Gangavathi College</span>
+                  </p>
+                </div>
+                
+                <div className="bg-deep-black/30 p-6 rounded-lg border border-neon-green/20">
+                  <h3 className="text-xl font-bold text-neon-green mb-4">Vision & Goals</h3>
+                  <div className="space-y-3 text-gray-300 text-left">
+                    <p className="flex items-start">
+                      <span className="text-neon-pink mr-2">🎯</span>
+                      To democratize web development by making professional websites accessible to every Indian business, regardless of their budget.
+                    </p>
+                    <p className="flex items-start">
+                      <span className="text-neon-blue mr-2">💡</span>
+                      To inspire young developers across India that age is just a number when it comes to building impactful digital solutions.
+                    </p>
+                    <p className="flex items-start">
+                      <span className="text-neon-green mr-2">🚀</span>
+                      To bridge the gap between traditional businesses and the digital world through innovative, affordable technology.
+                    </p>
+                    <p className="flex items-start">
+                      <span className="text-neon-pink mr-2">🌟</span>
+                      To prove that with passion, dedication, and continuous learning, anyone can turn their dreams into reality.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-lg text-gray-400 italic">
+                  "Every line of code I write is a step towards making technology more accessible and empowering businesses to thrive in the digital age."
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
             {stats.map((stat, index) => (
@@ -69,8 +116,8 @@ const About = () => {
 
           {/* Team */}
           <div className="mb-20">
-            <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12 text-neon-blue">Meet Our Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-center mb-12 text-neon-blue">Our Team</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => (
                 <Card 
                   key={member.name}
